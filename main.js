@@ -1231,7 +1231,17 @@ you.buttons.querySelector(".fold-button").addEventListener(`click`, () => {
   poker.foldCount++;
   poker.cyclePlayers();
 })
+you.buttons.querySelector(".all-in-button").addEventListener(`click`, () => {
+  poker.togglePlayerOptions();
+  you.youRaise.classList.toggle("hidden");
 
+  let bet = you.bank;
+  you.addBetToBetPile(bet);
+
+  poker.editBetTrackers(bet);
+  poker.raiseCount = 1;
+  poker.cyclePlayers();
+})
 }
 
 /* ************************************************* */
